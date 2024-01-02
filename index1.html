@@ -190,11 +190,16 @@ function validateForm(){
         checkEmptyField(document.getElementById('gebruikersnaam').value, 'Gebruikersnaam', errors);
         checkEmptyField(document.getElementById('adres').value, 'Adres', errors);
         checkEmptyField(document.getElementById('postcode').value, 'Postcode', errors);
+        checkEmptyField(document.getElementById('emailadres').value, 'Emailadres', errors);
+        checkEmptyField(document.getElementById('inputPassword5').value, 'Wachtwoord', errors);
+        checkEmptyField(document.getElementById('inputPasswords').value, 'Herhaal wachtwoord', errors);
+ 
+    
        
 
-        validateEmail(document.getElementById('emailadres').value, 'Dit is geen correct email-adres' ,errors);
+        validateEmail(document.getElementById('emailadres').value ,errors);
 
-        checkPC(document.getElementById('postcode').value, ' De postcode bevat 4 cijfers' ,errors);
+        checkPC(document.getElementById('postcode').value, errors);
 
         validatePasswords(document.getElementById('inputPassword5').value, 'wachtwoord', errors);
         validatePasswords(document.getElementById('inputPasswords').value, 'herhaal wachtwoord', errors);
@@ -212,6 +217,11 @@ function validateForm(){
     displaySuccess();
   }
 
+  if (passwordCompare(inputPassword5, inputPasswords)){
+    errors.push('de wachtwoorden komen niet overeen')
+  }
+  
+
 }
 
 function checkEmptyField(value, fieldName, errors) {
@@ -220,11 +230,12 @@ function checkEmptyField(value, fieldName, errors) {
         }
     }
 
-        function validateEmail(email, errors){
-            const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-    return emailRegex.test(email);
+    function validateEmail(value, errors) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            errors.push('E-mailadres is niet correct.');
         }
-
+    }
         
         function validatePasswords(value,  fieldName, errors ){
             if (value.length < 8) {
@@ -232,19 +243,28 @@ function checkEmptyField(value, fieldName, errors) {
             }
         }
 
-        function validatePayment(paymentMethod, errors) {
-        if (!paymentMethod) {
+function passwordCompare(inputPassword5, inputPasswords){
+    return inputPassword5 !== inputPasswords;
+}
+
+        function validatePayment(value, errors) {
+        if (!value) {
             errors.push('Betalingswijze is vereist.');
         } else {
-            var paymentMessage = 'U heeft gekozen voor ' + paymentMethod.value + ' als betalingswijze.';
-            document.getElementById('betalingAlert').betalingswijzeMessage.innerHTML = (paymentMessage)
+            var paymentMessage = 'U heeft gekozen voor ' + value + ' als betalingswijze.';
+            document.getElementById('betalingswijzeMessage').innerHTML = (paymentMessage)
+     
         }
     }
 
-        function checkPC(){
+        function checkPC(value,errors){
+            
+            var Pvalue = parseInt(value);
+            if (isNaN(Pvalue) || Pvalue < 1000 || Pvalue >= 10000) {
+                errors.push('De waarde van postcode moet tussen 1000 en 9999 liggen.');
 
         }
-
+    }
            function displayErrors(errors) {
   var errorMessages = document.getElementById('errorMessages');
   errorMessages.innerHTML = errors.join('<br>');
@@ -254,8 +274,6 @@ function checkEmptyField(value, fieldName, errors) {
 }
 
 function displaySuccess() {
-    var betalingswijzeMessage = document.getElementsByName('flexRadioDefault');
-  betalingswijzeMessage.innerHTML = 'Uw betalingswijze is' 
   document.getElementById('errorAlert').style.display = 'none';
   document.getElementById('successAlert').style.display = 'block';
   document.getElementById('betalingAlert').style.display = 'block';
