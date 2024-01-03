@@ -87,8 +87,8 @@
     <div class="mb-3">
         <div class="row align-items-start">
             <div class="col">
-            <label for="Keuzemenu" class="form-label" id="land">Land</label>
-            <select class="form-select" aria-label="Default select example">
+            <label for="Keuzemenu" class="form-label">Land</label>
+            <select class="form-select" aria-label="Default select example" id="land">
                 <option selected>Kies een land</option>
                 <option value="1">Belgie</option>
                 <option value="2">Nederland</option>
@@ -97,8 +97,8 @@
             </select>    
             </div>
             <div class="col">
-                <label for="Keuzemenu" class="form-label" id="provincie">Provincie</label>
-                <select class="form-select" aria-label="Default select example">
+                <label for="Keuzemenu" class="form-label">Provincie</label>
+                <select class="form-select" aria-label="Default select example" id="provincie">
                     <option selected>Kies een Provincie</option>
                     <option value="1">Antwerpen</option>
                     <option value="2">Limburg</option>
@@ -136,26 +136,26 @@
           </div>
             <div class="col">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Banking app">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Banking app
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Overschrijving">
+                    <label class="form-check-label" for="flexRadioDefault1">
                       Overschrijving
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                    <label class="form-check-label" for="flexRadioDefault3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="Visa card">
+                    <label class="form-check-label" for="flexRadioDefault1">
                       Visa card
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                    <label class="form-check-label" for="flexRadioDefault4">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="Paypal">
+                    <label class="form-check-label" for="flexRadioDefault1">
                       Paypal
                     </label>
                   </div>
@@ -194,8 +194,6 @@ function validateForm(){
         checkEmptyField(document.getElementById('inputPassword5').value, 'Wachtwoord', errors);
         checkEmptyField(document.getElementById('inputPasswords').value, 'Herhaal wachtwoord', errors);
  
-    
-       
 
         validateEmail(document.getElementById('emailadres').value ,errors);
 
@@ -204,7 +202,34 @@ function validateForm(){
         validatePasswords(document.getElementById('inputPassword5').value, 'wachtwoord', errors);
         validatePasswords(document.getElementById('inputPasswords').value, 'herhaal wachtwoord', errors);
 
+        var password = document.getElementById('inputPassword5').value;
+        var confirmPassword = document.getElementById('inputPasswords').value;
+        if(password !== confirmPassword){
+            errors.push('Uw paswoorden komen niet overeen')
+        }
+
+        var landSelected = document.querySelector('#land');
+        var selectedIndex = landSelected.selectedIndex;
+
+        if(selectedIndex === 0){
+            errors.push('U moet een land kiezen')
+        }
+        
+        var provincieSelected = document.querySelector('#provincie');
+        var selectedIndex = provincieSelected.selectedIndex;
+
+        if(selectedIndex === 0){
+            errors.push('U moet een provincie kiezen')
+        }
+
+
+
         validatePayment(document.querySelector('input[name="flexRadioDefault"]:checked'), errors);
+
+        var paymentSelected = document.querySelector('input[name="flexRadioDefault"]:checked');
+        if(paymentSelected){
+            document.getElementById('betalingswijzeMessage').innerHTML = ('U heeft gekozen voor ' + paymentSelected.value + ' als betalingswijze.')
+        }
       
 
         if (!document.getElementById('flexCheckChecked').checked) {
@@ -216,11 +241,6 @@ function validateForm(){
   } else {
     displaySuccess();
   }
-
-  if (passwordCompare(inputPassword5, inputPasswords)){
-    errors.push('de wachtwoorden komen niet overeen')
-  }
-  
 
 }
 
@@ -250,11 +270,7 @@ function passwordCompare(inputPassword5, inputPasswords){
         function validatePayment(value, errors) {
         if (!value) {
             errors.push('Betalingswijze is vereist.');
-        } else {
-            var paymentMessage = 'U heeft gekozen voor ' + value + ' als betalingswijze.';
-            document.getElementById('betalingswijzeMessage').innerHTML = (paymentMessage)
-     
-        }
+        } 
     }
 
         function checkPC(value,errors){
