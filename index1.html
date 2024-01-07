@@ -190,14 +190,14 @@ document.getElementById('submit').addEventListener('click', validateForm);
 function validateForm(){
 
     var errors = [];
-
+// via W3 shools gevonden
         checkEmptyField(document.getElementById('voornaam').value, 'Voornaam', errors);
         checkEmptyField(document.getElementById('naam').value, 'Naam', errors);
 
         checkEmptyField(document.getElementById('gebruikersnaam').value, 'Gebruikersnaam', errors);
         checkEmptyField(document.getElementById('emailadres').value, 'Emailadres', errors);
         validateEmail(document.getElementById('emailadres').value ,errors);
-
+// via chatgpt gevonden
         checkEmptyField(document.getElementById('inputPassword5').value, 'Wachtwoord', errors);
         checkEmptyField(document.getElementById('inputPasswords').value, 'Herhaal wachtwoord', errors);
         validatePasswords(document.getElementById('inputPassword5').value, 'wachtwoord', errors);
@@ -209,7 +209,7 @@ function validateForm(){
         }
 
         checkEmptyField(document.getElementById('adres').value, 'Adres', errors);
- 
+// Via google gevonden 
         var landSelected = document.querySelector('#land');
         var selectedIndex = landSelected.selectedIndex;
 
@@ -237,7 +237,7 @@ function validateForm(){
         if(paymentSelected){
             document.getElementById('betalingswijzeMessage').innerHTML = ('U heeft gekozen voor ' + paymentSelected.value + ' als betalingswijze.')
         }
-
+// was samen met function display errors gevonden op chat gpt
         if (errors.length > 0) {
         displayErrors(errors);
         } else {
@@ -250,7 +250,7 @@ function checkEmptyField(value, fieldName, errors) {
             errors.push('Het veld ' + fieldName + ' is vereist.');
         }
     }
-
+// functie via google compleet gemaakt. 
 function validateEmail(value, errors) {
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
