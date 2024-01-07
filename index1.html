@@ -17,67 +17,65 @@
     <div class="mb-3">
         <div class="row align-items-start">
             <div class="col">
-            <label for="Voornaam" class="form-label">Voornaam</label>
-            <input type="text" class="form-control" id="voornaam" placeholder="Uw voornaam">
+                <label for="Voornaam" class="form-label">Voornaam</label>
+                <input type="text" class="form-control" id="voornaam" placeholder="Uw voornaam">
             </div>
             <div class="col">
-            <label for="Naam" class="form-label">Naam</label>
-            <input type="Text" class="form-control" id="naam" placeholder="uw naam">
+                <label for="Naam" class="form-label">Naam</label>
+                <input type="Text" class="form-control" id="naam" placeholder="uw naam">
             </div>
             <div class="col">
                 <div class="alert alert-danger" role="alert" id="errorAlert" style="display: none;">
                     <h4 class="alert-heading">Yikes, errors ...</h4>
                     <p id="errorMessages"></p>
-                  </div>
-            </div>
-        </div>
-    </div>
-    <div class="mb-3">
-        <div class="row align-items-start">
-            <div class="col">
-            <label for="Gebruikersnaam" class="form-label">Gebruikersnaam</label>
-            <input type="text" class="form-control" id="gebruikersnaam" placeholder="@ u911236">
-        </div>
-            <div class="col">
-            <label for="E-mailadres" class="form-label">E-mailadres</label>
-            <input type="email" class="form-control" id="emailadres" placeholder="mail@example.be">
-            </div>
-            <div class="col">
+                </div>
                 <div class="alert alert-success" role="alert" id="successAlert" style="display: none;">
                     <h4 class="alert-heading">Goed gedaan</h4>
                     <p id="goedGedaanMessage">Auw yeah, je bent geregistreerd</p>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="mb-3">
         <div class="row align-items-start">
-            <div class="col">
+            <div class="col-4">
+                <label for="Gebruikersnaam" class="form-label">Gebruikersnaam</label>
+                <input type="text" class="form-control" id="gebruikersnaam" placeholder="@ u911236">
+            </div>
+            <div class="col-4">
+                <label for="E-mailadres" class="form-label">E-mailadres</label>
+                <input type="email" class="form-control" id="emailadres" placeholder="mail@example.be">
+            </div>
+            <div class="col-4">
+                <div class="alert alert-info" role="alert" id="betalingAlert" style="display: none;">
+                    <h4 class="alert-heading">Betalingswijze</h4>
+                    <p id="betalingswijzeMessage"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="row align-items-start">
+            <div class="col-4">
                 <label for="inputPassword5" class="form-label">Wachtwoord</label>
                 <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
                 <div id="passwordHelpBlock" class="form-text">
                   Je wachtwoord moet minstens 8 tekens lang zijn.
                 </div>
             </div>
-            <div class="col">
+            <div class="col-4">
                 <label for="inputPassword5" class="form-label">Herhaal wachtwoord</label>
                 <input type="password" id="inputPasswords" class="form-control" aria-describedby="passwordHelpBlock">
                 <div id="passwordHelpBlock" class="form-text">
                 </div>
-            </div>
-            <div class="col">
-                <div class="alert alert-info" role="alert" id="betalingAlert" style="display: none;">
-                    <h4 class="alert-heading">Betalingswijze</h4>
-                    <p id="betalingswijzeMessage"></p>
-                  </div>
             </div>
         </div>
     </div>
     <div class="mb-3">
         <div class="row align-items-start">
             <div class="col-8">
-            <label for="Adres" class="form-label">Adres</label>
-            <input type="text" class="form-control" id="adres" placeholder="Uw adres en huisnummer">
+                <label for="Adres" class="form-label">Adres</label>
+                <input type="text" class="form-control" id="adres" placeholder="Uw adres en huisnummer">
             </div>
             <div class="col-4">
 
@@ -117,7 +115,11 @@
             </div>
         </div>
     </div>
-    <hr>
+    <div class="row">
+        <div class="col-8">
+            <hr>
+        </div>
+    </div>
     <div class="container">
         <div class="row align-items-start">
             <div class="col">
@@ -126,13 +128,13 @@
                     <label class="form-check-label" for="flexCheckDefault">
                     Inschrijven voor onze nieuwsbrief.  
                     </label>
-                  </div>
-                  <div class="form-check">
+                </div>
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                     <label class="form-check-label" for="flexCheckChecked">
                     Ik ga akkoord met de algemene voorwaarden.
                     </label>
-                  </div>
+                </div>
           </div>
             <div class="col">
                 <div class="form-check">
@@ -140,25 +142,25 @@
                     <label class="form-check-label" for="flexRadioDefault1">
                       Banking app
                     </label>
-                  </div>
-                  <div class="form-check">
+                </div>
+                <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Overschrijving">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Overschrijving
                     </label>
-                  </div>
-                  <div class="form-check">
+                </div>
+                <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value="Visa card">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Visa card
                     </label>
-                  </div>
-                  <div class="form-check">
+                </div>
+                <div class="form-check">
                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" value="Paypal">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Paypal
                     </label>
-                  </div>
+                </div>
             </div>
             <div class="col">
 
@@ -166,21 +168,24 @@
 
             </div>
         </div>
-    </div>
-    <hr>
+        <div class="row">
+            <div class="col-8">
+                <hr>
+            </div>
+        </div>
     <div class="mb-3">
         <div class="row align-items-start">
             <div class="col-8">
-            <button type="submit" class="btn btn-primary" id="submit">Wave your magic wand</button>
+                <button type="submit" class="btn btn-primary" id="submit">Wave your magic wand</button>
             </div>
             <div class="col-4">
 
             </div>
         </div>
     </div>    
-
+    </div>
     <script>
-       document.getElementById('submit').addEventListener('click', validateForm);
+document.getElementById('submit').addEventListener('click', validateForm);
 
 function validateForm(){
 
@@ -188,27 +193,23 @@ function validateForm(){
 
         checkEmptyField(document.getElementById('voornaam').value, 'Voornaam', errors);
         checkEmptyField(document.getElementById('naam').value, 'Naam', errors);
-        checkEmptyField(document.getElementById('gebruikersnaam').value, 'Gebruikersnaam', errors);
-        checkEmptyField(document.getElementById('adres').value, 'Adres', errors);
-        checkEmptyField(document.getElementById('postcode').value, 'Postcode', errors);
-        checkEmptyField(document.getElementById('emailadres').value, 'Emailadres', errors);
-        checkEmptyField(document.getElementById('inputPassword5').value, 'Wachtwoord', errors);
-        checkEmptyField(document.getElementById('inputPasswords').value, 'Herhaal wachtwoord', errors);
- 
 
+        checkEmptyField(document.getElementById('gebruikersnaam').value, 'Gebruikersnaam', errors);
+        checkEmptyField(document.getElementById('emailadres').value, 'Emailadres', errors);
         validateEmail(document.getElementById('emailadres').value ,errors);
 
-        checkPC(document.getElementById('postcode').value, errors);
-
+        checkEmptyField(document.getElementById('inputPassword5').value, 'Wachtwoord', errors);
+        checkEmptyField(document.getElementById('inputPasswords').value, 'Herhaal wachtwoord', errors);
         validatePasswords(document.getElementById('inputPassword5').value, 'wachtwoord', errors);
         validatePasswords(document.getElementById('inputPasswords').value, 'herhaal wachtwoord', errors);
-
         var password = document.getElementById('inputPassword5').value;
         var confirmPassword = document.getElementById('inputPasswords').value;
         if(password !== confirmPassword){
             errors.push('Uw paswoorden komen niet overeen')
         }
 
+        checkEmptyField(document.getElementById('adres').value, 'Adres', errors);
+ 
         var landSelected = document.querySelector('#land');
         var selectedIndex = landSelected.selectedIndex;
 
@@ -222,8 +223,13 @@ function validateForm(){
         if(selectedIndex === 0){
             errors.push('U moet een provincie kiezen')
         }
+        
+        checkEmptyField(document.getElementById('postcode').value, 'Postcode', errors);
+        checkPC(document.getElementById('postcode').value, errors);
 
-
+        if (!document.getElementById('flexCheckChecked').checked) {
+        errors.push('U moet akkoord gaan met de algemene voorwaarden.');
+        }
 
         validatePayment(document.querySelector('input[name="flexRadioDefault"]:checked'), errors);
 
@@ -231,18 +237,12 @@ function validateForm(){
         if(paymentSelected){
             document.getElementById('betalingswijzeMessage').innerHTML = ('U heeft gekozen voor ' + paymentSelected.value + ' als betalingswijze.')
         }
-      
-
-        if (!document.getElementById('flexCheckChecked').checked) {
-    errors.push('U moet akkoord gaan met de algemene voorwaarden.');
-        }
 
         if (errors.length > 0) {
-    displayErrors(errors);
-  } else {
-    displaySuccess();
-  }
-
+        displayErrors(errors);
+        } else {
+        displaySuccess();
+        }
 }
 
 function checkEmptyField(value, fieldName, errors) {
@@ -251,55 +251,50 @@ function checkEmptyField(value, fieldName, errors) {
         }
     }
 
-    function validateEmail(value, errors) {
+function validateEmail(value, errors) {
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
             errors.push('E-mailadres is niet correct.');
         }
     }
         
-        function validatePasswords(value,  fieldName, errors ){
-            if (value.length < 8) {
-                errors.push('Dit ' + fieldName + ' bevat geen 8 karakters');
-            }
+function validatePasswords(value,  fieldName, errors ){
+        if (value.length < 8) {
+        errors.push('Dit ' + fieldName + ' bevat geen 8 karakters');
         }
+    }
 
 function passwordCompare(inputPassword5, inputPasswords){
-    return inputPassword5 !== inputPasswords;
-}
+        return inputPassword5 !== inputPasswords;
+    }
 
-        function validatePayment(value, errors) {
+function validatePayment(value, errors) {
         if (!value) {
-            errors.push('Betalingswijze is vereist.');
+        errors.push('Betalingswijze is vereist.');
         } 
     }
 
-        function checkPC(value,errors){
-            
-            var Pvalue = parseInt(value);
-            if (isNaN(Pvalue) || Pvalue < 1000 || Pvalue >= 10000) {
-                errors.push('De waarde van postcode moet tussen 1000 en 9999 liggen.');
-
+function checkPC(value,errors){
+        var Pvalue = parseInt(value);
+        if (isNaN(Pvalue) || Pvalue < 1000 || Pvalue >= 10000) {
+        errors.push('De waarde van postcode moet tussen 1000 en 9999 liggen.');
         }
     }
-           function displayErrors(errors) {
-  var errorMessages = document.getElementById('errorMessages');
-  errorMessages.innerHTML = errors.join('<br>');
-  document.getElementById('errorAlert').style.display = 'block';
-  document.getElementById('successAlert').style.display = 'none';
-  document.getElementById('betalingAlert').style.display = 'none';
-}
+
+function displayErrors(errors) {
+        var errorMessages = document.getElementById('errorMessages');
+        errorMessages.innerHTML = errors.join('<br>');
+        document.getElementById('errorAlert').style.display = 'block';
+        document.getElementById('successAlert').style.display = 'none';
+        document.getElementById('betalingAlert').style.display = 'none';
+    }
 
 function displaySuccess() {
-  document.getElementById('errorAlert').style.display = 'none';
-  document.getElementById('successAlert').style.display = 'block';
-  document.getElementById('betalingAlert').style.display = 'block';
-}
-        
+        document.getElementById('errorAlert').style.display = 'none';
+        document.getElementById('successAlert').style.display = 'block';
+        document.getElementById('betalingAlert').style.display = 'block';
+    }
             
-    
-
-        
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
